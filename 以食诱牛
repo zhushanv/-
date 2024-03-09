@@ -1,3 +1,4 @@
+//题目链接https://ac.nowcoder.com/acm/contest/75771/A
 #include <iostream>
 using namespace std;
 int main ()
