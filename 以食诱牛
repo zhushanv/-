@@ -1,0 +1,50 @@
+#include <iostream>
+using namespace std;
+int main ()
+{
+    int x , n ;
+    cin >> x >> n;
+    //输入x,n
+    
+    int w[100];
+    char ch[100];
+    for(int i = 0; i < n; i++)
+    {
+        cin>>ch[i]>>w[i];
+    }
+    //输入n组数据
+    
+    for (int i = 0; i < n-1; i++)
+    {
+        int tmp = 0;
+        char tep;
+        if (w[i] > w[i+1]) 
+        {
+            tmp = w[i];
+            w[i] = w[i+1];
+            w[i+1] = tmp;
+            tep = ch[i];
+            ch[i] = ch[i+1];
+            ch[i+1] = tep;
+        }
+    }
+    //找到最大的整数w，将其移动到数组末尾，并对应移动字符数组
+    
+    int m =0;
+    int y = w[n-1];
+    if (y > x) cout<< ch[n-1]<<endl;
+    else 
+    {
+        if (y*1000 < x) {cout<<"-1"<<endl;}
+        else 
+        { while (y < x)
+                {y = y + w[n -1];
+                 m ++;           
+               }
+  //每次增加一个W,直到Y大于X，并用M来记录次数
+             for (int i = 0; i < m+1;i++) cout << ch[n-1];
+        }
+    }
+        
+    return 0;
+}
